@@ -30,6 +30,7 @@
         {
             this.tabAracDüzenle = new System.Windows.Forms.TabControl();
             this.tabAracSecimi = new System.Windows.Forms.TabPage();
+            this.dgvVitrin = new System.Windows.Forms.DataGridView();
             this.tabAracGiris = new System.Windows.Forms.TabPage();
             this.btnKaydetAracBilgi = new System.Windows.Forms.Button();
             this.btnResmiSec = new System.Windows.Forms.Button();
@@ -63,7 +64,6 @@
             this.lblGuncelPlaka = new System.Windows.Forms.Label();
             this.lblAraclar = new System.Windows.Forms.Label();
             this.cmbAraclar = new System.Windows.Forms.ComboBox();
-            this.dgvVitrin = new System.Windows.Forms.DataGridView();
             this.dgvChkSecim = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dgvImgResim = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvTxtMarka = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,14 +72,16 @@
             this.dgvTxtUcret = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTxtVites = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTxtUygunluk = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVtrKirala = new System.Windows.Forms.Button();
+            this.btnVtrTeslim = new System.Windows.Forms.Button();
             this.tabAracDüzenle.SuspendLayout();
             this.tabAracSecimi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVitrin)).BeginInit();
             this.tabAracGiris.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBxAracResmi)).BeginInit();
             this.YeniAracBilgi.SuspendLayout();
             this.tabAracDuzenle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBxGuncelResim)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVitrin)).BeginInit();
             this.SuspendLayout();
             // 
             // tabAracDüzenle
@@ -98,6 +100,8 @@
             // 
             // tabAracSecimi
             // 
+            this.tabAracSecimi.Controls.Add(this.btnVtrTeslim);
+            this.tabAracSecimi.Controls.Add(this.btnVtrKirala);
             this.tabAracSecimi.Controls.Add(this.dgvVitrin);
             this.tabAracSecimi.Location = new System.Drawing.Point(4, 31);
             this.tabAracSecimi.Margin = new System.Windows.Forms.Padding(4);
@@ -107,6 +111,25 @@
             this.tabAracSecimi.TabIndex = 0;
             this.tabAracSecimi.Text = "Araç Seçim Ekranı";
             this.tabAracSecimi.UseVisualStyleBackColor = true;
+            // 
+            // dgvVitrin
+            // 
+            this.dgvVitrin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVitrin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvChkSecim,
+            this.dgvImgResim,
+            this.dgvTxtMarka,
+            this.dgvTxtModel,
+            this.dgvTxtPlaka,
+            this.dgvTxtUcret,
+            this.dgvTxtVites,
+            this.dgvTxtUygunluk});
+            this.dgvVitrin.Location = new System.Drawing.Point(3, 81);
+            this.dgvVitrin.Name = "dgvVitrin";
+            this.dgvVitrin.RowHeadersWidth = 51;
+            this.dgvVitrin.RowTemplate.Height = 120;
+            this.dgvVitrin.Size = new System.Drawing.Size(1078, 453);
+            this.dgvVitrin.TabIndex = 0;
             // 
             // tabAracGiris
             // 
@@ -119,7 +142,7 @@
             this.tabAracGiris.Margin = new System.Windows.Forms.Padding(4);
             this.tabAracGiris.Name = "tabAracGiris";
             this.tabAracGiris.Padding = new System.Windows.Forms.Padding(4);
-            this.tabAracGiris.Size = new System.Drawing.Size(927, 537);
+            this.tabAracGiris.Size = new System.Drawing.Size(1084, 537);
             this.tabAracGiris.TabIndex = 1;
             this.tabAracGiris.Text = "Araç Giriş Ekranı";
             this.tabAracGiris.UseVisualStyleBackColor = true;
@@ -304,7 +327,7 @@
             this.tabAracDuzenle.Controls.Add(this.cmbAraclar);
             this.tabAracDuzenle.Location = new System.Drawing.Point(4, 31);
             this.tabAracDuzenle.Name = "tabAracDuzenle";
-            this.tabAracDuzenle.Size = new System.Drawing.Size(927, 537);
+            this.tabAracDuzenle.Size = new System.Drawing.Size(1084, 537);
             this.tabAracDuzenle.TabIndex = 2;
             this.tabAracDuzenle.Text = "Bilgileri Düzenle";
             this.tabAracDuzenle.UseVisualStyleBackColor = true;
@@ -442,25 +465,6 @@
             this.cmbAraclar.TabIndex = 0;
             this.cmbAraclar.SelectedIndexChanged += new System.EventHandler(this.cmbAraclar_SelectedIndexChanged);
             // 
-            // dgvVitrin
-            // 
-            this.dgvVitrin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVitrin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvChkSecim,
-            this.dgvImgResim,
-            this.dgvTxtMarka,
-            this.dgvTxtModel,
-            this.dgvTxtPlaka,
-            this.dgvTxtUcret,
-            this.dgvTxtVites,
-            this.dgvTxtUygunluk});
-            this.dgvVitrin.Location = new System.Drawing.Point(3, 7);
-            this.dgvVitrin.Name = "dgvVitrin";
-            this.dgvVitrin.RowHeadersWidth = 51;
-            this.dgvVitrin.RowTemplate.Height = 24;
-            this.dgvVitrin.Size = new System.Drawing.Size(1073, 477);
-            this.dgvVitrin.TabIndex = 0;
-            // 
             // dgvChkSecim
             // 
             this.dgvChkSecim.HeaderText = "Seç";
@@ -471,6 +475,7 @@
             // dgvImgResim
             // 
             this.dgvImgResim.HeaderText = "Araç Resmi";
+            this.dgvImgResim.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.dgvImgResim.MinimumWidth = 6;
             this.dgvImgResim.Name = "dgvImgResim";
             this.dgvImgResim.Width = 125;
@@ -517,6 +522,26 @@
             this.dgvTxtUygunluk.Name = "dgvTxtUygunluk";
             this.dgvTxtUygunluk.Width = 125;
             // 
+            // btnVtrKirala
+            // 
+            this.btnVtrKirala.Location = new System.Drawing.Point(251, 3);
+            this.btnVtrKirala.Name = "btnVtrKirala";
+            this.btnVtrKirala.Size = new System.Drawing.Size(196, 72);
+            this.btnVtrKirala.TabIndex = 1;
+            this.btnVtrKirala.Text = "Kirala";
+            this.btnVtrKirala.UseVisualStyleBackColor = true;
+            this.btnVtrKirala.Click += new System.EventHandler(this.btnVtrKirala_Click);
+            // 
+            // btnVtrTeslim
+            // 
+            this.btnVtrTeslim.Location = new System.Drawing.Point(608, 3);
+            this.btnVtrTeslim.Name = "btnVtrTeslim";
+            this.btnVtrTeslim.Size = new System.Drawing.Size(196, 72);
+            this.btnVtrTeslim.TabIndex = 2;
+            this.btnVtrTeslim.Text = "Teslim Al";
+            this.btnVtrTeslim.UseVisualStyleBackColor = true;
+            this.btnVtrTeslim.Click += new System.EventHandler(this.btnVtrTeslim_Click);
+            // 
             // AnaMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -530,6 +555,7 @@
             this.Load += new System.EventHandler(this.AnaMenuForm_Load);
             this.tabAracDüzenle.ResumeLayout(false);
             this.tabAracSecimi.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVitrin)).EndInit();
             this.tabAracGiris.ResumeLayout(false);
             this.tabAracGiris.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBxAracResmi)).EndInit();
@@ -538,7 +564,6 @@
             this.tabAracDuzenle.ResumeLayout(false);
             this.tabAracDuzenle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBxGuncelResim)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVitrin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -589,5 +614,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvTxtUcret;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvTxtVites;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvTxtUygunluk;
+        private System.Windows.Forms.Button btnVtrKirala;
+        private System.Windows.Forms.Button btnVtrTeslim;
     }
 }

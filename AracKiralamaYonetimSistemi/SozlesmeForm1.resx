@@ -117,52 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="dgvChkSecim.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvImgResim.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvTxtMarka.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvTxtModel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvTxtPlaka.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvTxtUcret.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvTxtVites.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvTxtUygunluk.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvChkSecim.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvImgResim.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvTxtMarka.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvTxtModel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvTxtPlaka.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvTxtUcret.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvTxtVites.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvTxtUygunluk.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>ARAÇ KİRALAMA SÖZLEŞMESİ ŞARTLARI
+Madde 1: Teslim ve İade
+Kiracı, aracı teslim aldığı yakıt seviyesi ve fiziki koşullarla iade etmekle yükümlüdür. Eksik yakıtla teslim edilen araçlarda, eksik yakıt bedeli ve %20 hizmet bedeli tahsil edilir.
+
+Madde 2: Gecikme Cezası
+Kiralama süresinin bitiminde aracın teslim edilmemesi durumunda, 2 saate kadar olan gecikmelerde saatlik ücret, 2 saati aşan gecikmelerde ise 1 tam günlük kiralama bedeli cezai şart olarak kiracıya yansıtılır.
+
+Madde 3: Trafik Cezaları ve Otoyol Geçişleri
+Kiralama süresi boyunca oluşabilecek her türlü trafik cezası, OGS/HGS geçiş ücretleri ve otopark bedelleri tamamen kiracının sorumluluğundadır.
+
+Madde 4: Kaza ve Hasar Durumu
+Olası bir kaza durumunda kiracı, aracı yerinden oynatmadan derhal polis veya jandarma trafik ekiplerine haber vermek ve kaza tespit tutanağı tutturmak zorundadır. Alkol veya uyuşturucu madde etkisi altında yapılan kazalarda tüm hasar bedeli kiracıdan tahsil edilir.
+
+Madde 5: Kullanım Sınırları
+Araç; yarışlara katılamaz, off-road veya arazi şartlarında kullanılamaz ve kiracı dışında, sözleşmede adı geçmeyen üçüncü bir şahıs tarafından (alt kiralama dâhil) kesinlikle kullanılamaz.</value>
+  </data>
 </root>

@@ -61,6 +61,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sozlesme.cs" />
+    <Compile Include="SozlesmeForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SozlesmeForm1.Designer.cs">
+      <DependentUpon>SozlesmeForm1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AnaMenuForm.resx">
       <DependentUpon>AnaMenuForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +83,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SozlesmeForm1.resx">
+      <DependentUpon>SozlesmeForm1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

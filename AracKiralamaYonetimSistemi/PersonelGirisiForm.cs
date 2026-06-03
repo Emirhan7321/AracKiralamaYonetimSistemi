@@ -19,9 +19,21 @@ namespace AracKiralamaYonetimSistemi
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            
-            AnaMenuForm anaMenu = new AnaMenuForm();
-            anaMenu.Show();
+            string kullaniciAdi = "admin";
+            string sifre = "123";
+
+            if(txtKullaniciAdi.Text == kullaniciAdi && txtSifre.Text == sifre)
+            {
+                AnaMenuForm anaMenu = new AnaMenuForm();
+                anaMenu.Show();
+                this.Hide();
+            }
+
+            else
+            {
+                MessageBox.Show("Kullanıcı Adı veya Şifre Hatalı");
+                txtSifre.Clear();
+            }
 
         }
     }

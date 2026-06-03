@@ -41,9 +41,9 @@
             this.lblKullaniciAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblKullaniciAdi.Location = new System.Drawing.Point(47, 73);
             this.lblKullaniciAdi.Name = "lblKullaniciAdi";
-            this.lblKullaniciAdi.Size = new System.Drawing.Size(161, 31);
+            this.lblKullaniciAdi.Size = new System.Drawing.Size(169, 31);
             this.lblKullaniciAdi.TabIndex = 0;
-            this.lblKullaniciAdi.Text = "Kullanıcı Adı";
+            this.lblKullaniciAdi.Text = "Kullanıcı Adı:";
             // 
             // txtKullaniciAdi
             // 
@@ -56,18 +56,19 @@
             // 
             this.lblSifre.AutoSize = true;
             this.lblSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSifre.Location = new System.Drawing.Point(47, 158);
+            this.lblSifre.Location = new System.Drawing.Point(47, 145);
             this.lblSifre.Name = "lblSifre";
-            this.lblSifre.Size = new System.Drawing.Size(70, 31);
+            this.lblSifre.Size = new System.Drawing.Size(78, 31);
             this.lblSifre.TabIndex = 2;
-            this.lblSifre.Text = "Şifre";
+            this.lblSifre.Text = "Şifre:";
             // 
             // txtSifre
             // 
-            this.txtSifre.Location = new System.Drawing.Point(268, 158);
+            this.txtSifre.Location = new System.Drawing.Point(268, 145);
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(425, 22);
             this.txtSifre.TabIndex = 3;
+            this.txtSifre.UseSystemPasswordChar = true;
             // 
             // btnGiris
             // 

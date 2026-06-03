@@ -33,7 +33,13 @@ namespace AracKiralamaYonetimSistemi
             foreach (Araba arac in AracListesi)
             {
                 string durumYazisi = arac.KullanımaHazirMi ? "Müsait" : "Kirada";
-                dgvVitrin.Rows.Add(false, null, arac.Marka, arac.Model, arac.Plaka, arac.GunlukKiralamaFiyati, arac.VitesTuru, durumYazisi);
+                int satirNo = dgvVitrin.Rows.Add(false, null, arac.Marka, arac.Model, arac.Plaka, arac.GunlukKiralamaFiyati, arac.VitesTuru, durumYazisi);
+
+                if (!string.IsNullOrEmpty(arac.resimYolu) && File.Exists(arac.resimYolu))
+                {
+                    dgvVitrin.Rows[satirNo].Cells[1].Value = Image.FromFile(arac.resimYolu);
+
+                }
             }
         }
 
@@ -84,7 +90,7 @@ namespace AracKiralamaYonetimSistemi
 
             string durumYazisi = yeniaraba.KullanımaHazirMi ? "Müsait" : "Kirada";
 
-            dgvVitrin.Rows.Add(
+            int satirNo = dgvVitrin.Rows.Add(
                 false,
                 null,
                 yeniaraba.Marka,
@@ -93,7 +99,13 @@ namespace AracKiralamaYonetimSistemi
                 yeniaraba.GunlukKiralamaFiyati,
                 yeniaraba.VitesTuru,
                 durumYazisi
-                                );
+                                            );
+
+            if ( !string.IsNullOrEmpty(yeniaraba.resimYolu) && File.Exists(yeniaraba.resimYolu))
+            {
+                dgvVitrin.Rows[satirNo].Cells[1].Value = Image.FromFile(yeniaraba.resimYolu);
+            }
+
         }
 
         private void cmbAraclar_SelectedIndexChanged(object sender, EventArgs e)
@@ -116,8 +128,11 @@ namespace AracKiralamaYonetimSistemi
         {
             if (cmbAraclar.SelectedIndex != -1)
             {
-                AracListesi.RemoveAt(cmbAraclar.SelectedIndex);
-                cmbAraclar.Items.RemoveAt(cmbAraclar.SelectedIndex);
+                int silinecekIndex = cmbAraclar.SelectedIndex;
+
+                AracListesi.RemoveAt(silinecekIndex);
+                dgvVitrin.Rows.RemoveAt(silinecekIndex);
+                cmbAraclar.Items.RemoveAt(silinecekIndex);
                 cmbAraclar.SelectedIndex = -1;
                 MessageBox.Show("Araç Silindi!!");
 
@@ -135,7 +150,8 @@ namespace AracKiralamaYonetimSistemi
         {
             if (cmbAraclar.SelectedIndex != -1)
             {
-                Araba guncellenecekAraba = AracListesi[cmbAraclar.SelectedIndex];
+                int guncellenecekIndex = cmbAraclar.SelectedIndex;
+                Araba guncellenecekAraba = AracListesi[guncellenecekIndex];
 
                 guncellenecekAraba.Plaka = txtGuncelPlaka.Text;
                 guncellenecekAraba.Marka = txtGuncelMarka.Text;
@@ -144,8 +160,26 @@ namespace AracKiralamaYonetimSistemi
                 guncellenecekAraba.KullanımaHazirMi = chkGuncelUygunluk.Checked;
                 guncellenecekAraba.resimYolu = pictBxGuncelResim.ImageLocation;
                 MessageBox.Show("Araç Bilgileri Güncellendi");
-                cmbAraclar.Items[cmbAraclar.SelectedIndex] = guncellenecekAraba.Marka + " " + guncellenecekAraba.Model;
+                cmbAraclar.Items[guncellenecekIndex] = guncellenecekAraba.Marka + " " + guncellenecekAraba.Model;
+
+                string durumYazisi = guncellenecekAraba.KullanımaHazirMi ? "Müsait" : "Kirada";
+                dgvVitrin.Rows[guncellenecekIndex].Cells[2].Value = guncellenecekAraba.Marka;
+                dgvVitrin.Rows[guncellenecekIndex].Cells[3].Value = guncellenecekAraba.Model;
+                dgvVitrin.Rows[guncellenecekIndex].Cells[4].Value = guncellenecekAraba.Plaka;
+                dgvVitrin.Rows[guncellenecekIndex].Cells[5].Value = guncellenecekAraba.GunlukKiralamaFiyati;
+                dgvVitrin.Rows[guncellenecekIndex].Cells[6].Value = guncellenecekAraba.VitesTuru;
+                dgvVitrin.Rows[guncellenecekIndex].Cells[7].Value = durumYazisi;
+                 if (!string.IsNullOrEmpty(guncellenecekAraba.resimYolu) && File.Exists(guncellenecekAraba.resimYolu))
+                {
+                    dgvVitrin.Rows[guncellenecekIndex].Cells[1].Value = Image.FromFile(guncellenecekAraba.resimYolu);
+                }
+                else
+                {
+                    dgvVitrin.Rows[guncellenecekIndex].Cells[1].Value = null;
+                }
+
                 VerileriKaydet();
+
             }
         }
 
@@ -201,5 +235,85 @@ namespace AracKiralamaYonetimSistemi
             }
         }
 
+        private void btnVtrKirala_Click(object sender, EventArgs e)
+        {
+            dgvVitrin.EndEdit();
+            bool herhangiBirAracSecildiMi = false;
+
+            for (int i = 0; i < dgvVitrin.Rows.Count; i++)
+            {
+                bool TikliMi = Convert.ToBoolean(dgvVitrin.Rows[i].Cells[0].Value);
+
+                if (TikliMi)
+                {
+                    herhangiBirAracSecildiMi = true;
+                    Araba secilenAraba = AracListesi[i];
+
+                    if (!secilenAraba.KullanımaHazirMi)
+                    {
+                        MessageBox.Show($"{secilenAraba.Plaka} plakalı araç zaten kirada! Lütfen müsait olanları seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        continue;
+                    }
+
+                    SozlesmeForm1 frmSozlesme = new SozlesmeForm1(secilenAraba.Plaka, secilenAraba.GunlukKiralamaFiyati);
+
+                    if (frmSozlesme.ShowDialog() == DialogResult.OK)
+                    {
+                        secilenAraba.KullanımaHazirMi = false;
+                        dgvVitrin.Rows[i].Cells[7].Value = "Kirada";
+                        dgvVitrin.Rows[i].Cells[0].Value = false;
+                    }
+                }
+                    
+            }
+            if (herhangiBirAracSecildiMi)
+            {
+                VerileriKaydet();
+            }
+
+            else
+            {
+                MessageBox.Show("Lütfen kiralamak için tablodan en az bir araca tik atın.");
+            }
+
+        }
+
+        private void btnVtrTeslim_Click(object sender, EventArgs e)
+        {
+            dgvVitrin.EndEdit();
+            bool herhangiBirAracSecildiMi = false;
+
+            for (int i = 0; i < dgvVitrin.Rows.Count; i++)
+            {
+                bool TikliMi = Convert.ToBoolean(dgvVitrin.Rows[i].Cells[0].Value);
+
+                if(TikliMi)
+                {
+                    herhangiBirAracSecildiMi = true;
+                    Araba secilenAraba = AracListesi[i];
+
+                    if(secilenAraba.KullanımaHazirMi)
+                    {
+                        MessageBox.Show($"{secilenAraba.Plaka} plakalı araç zaten müsait! Lütfen kirada olanları seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        continue;
+                    }
+
+                    secilenAraba.KullanımaHazirMi = true;
+                    dgvVitrin.Rows[i].Cells[7].Value = "Müsait";
+                    dgvVitrin.Rows[i].Cells[0].Value = false;
+                }
+            }
+            if(herhangiBirAracSecildiMi)
+            {
+                VerileriKaydet();
+                MessageBox.Show("Seçilen araç(lar) teslim alındı ve artık müsait durumdadır.");
+            }
+
+            else
+            {
+                MessageBox.Show("Lütfen teslim almak için tablodan en az bir araca tik atın.");
+            }
+
+        }
     }
 }
